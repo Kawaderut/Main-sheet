@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>📂 Google Sheets Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f7f9fc, #e3f2fd);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #2196f3;
+      color: white;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .search-bar {
+      margin: 20px auto;
+      width: 80%;
+      max-width: 500px;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 16px;
+      border: 2px solid #2196f3;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .container {
+      max-width: 1000px;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .button {
+      background-color: #ffffff;
+      border: 2px solid #2196f3;
+      color: #2196f3;
+      padding: 15px 20px;
+      font-size: 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      width: 240px;
+      text-align: left;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .button:hover {
+      background-color: #2196f3;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      background-color: #f1f1f1;
+      text-align: center;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .button {
+        width: 100%;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    📊 Google Sheets Dashboard
+  </header>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="🔍 Search for a sheet...">
+  </div>
+
+  <div class="container" id="buttonContainer">
+    <a href="https://docs.google.com/spreadsheets/d/1w_K-CULYPoA2TCzSvkCv6fK65YN_si1XNyxTyTuzcxE/edit?gid=0#gid=0" class="button" target="_blank">📁 PRINTER AND INK PRICE</a>
+    <a href="https://docs.google.com/spreadsheets/d/1cAGtH8202CdiDfxapvHbyqur6S8zKT4h/edit?gid=189462051#gid=189462051" class="button" target="_blank">📁 All PI Mastersheet 17-6</a>
+    <a href="https://docs.google.com/spreadsheets/d/1CD2M6lK4UzZKJBwQwZO37Ccerh5mCFEO9AOyySXXWdo/edit?gid=1106749027#gid=1106749027" class="button" target="_blank">📁 Export (Himanshu)</a>
+    <a href="https://docs.google.com/spreadsheets/d/1EE0YF5DO8Vqg4SCMgHpf7tnuxS1_3pAeJetc844onkE/edit?gid=1391441602#gid=1391441602" class="button" target="_blank">📁 Dreame Main Sheet</a>
+    <a href="https://docs.google.com/spreadsheets/d/yourSheetID5" class="button" target="_blank">📁 Sheet 5</a>
+    <a href="https://docs.google.com/spreadsheets/d/yourSheetID6" class="button" target="_blank">📁 Sheet 6</a>
+    <a href="https://docs.google.com/spreadsheets/d/yourSheetID7" class="button" target="_blank">📁 Sheet 7</a>
+    <a href="https://docs.google.com/spreadsheets/d/yourSheetID8" class="button" target="_blank">📁 Sheet 8</a>
+    <a href="https://docs.google.com/spreadsheets/d/yourSheetID9" class="button" target="_blank">📁 Sheet 9</a>
+    <a href="https://docs.google.com/spreadsheets/d/yourSheetID10" class="button" target="_blank">📁 Sheet 10</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Google Sheets Dashboard | Created by Rutuja Kawade
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const buttons = document.querySelectorAll('.button');
+
+    searchInput.addEventListener('input', () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      buttons.forEach(button => {
+        const text = button.textContent.toLowerCase();
+        button.style.display = text.includes(searchTerm) ? 'flex' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
